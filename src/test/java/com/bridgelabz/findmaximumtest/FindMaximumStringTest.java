@@ -13,16 +13,16 @@ public class FindMaximumStringTest {
 	@Test
 	public void givenFirstString_whenMax_shouldReturnTrue() {
 		String max ="Peach";
-		Assert.assertEquals(max,FindMaximum.findMax("Peach", "Apple", "Banana") );
+		Assert.assertEquals(max,FindMaximum.max("Peach", "Apple", "Banana") );
 	}
 	@Test
 	public void givenSecondString_whenMax_shouldReturnTrue() {
 		String max ="Peach";
-		Assert.assertEquals(max,FindMaximum.findMax("Apple", "Peach", "Banana") );
+		Assert.assertEquals(max,FindMaximum.max("Apple", "Peach", "Banana") );
 	}
 	@Test
 	public void givenThirdString_whenMax_shouldReturnTrue() {
 		String max ="Peach";
-		Assert.assertEquals(max,FindMaximum.findMax("Apple", "Banana", "Peach") );
+		Assert.assertEquals(max,FindMaximum.max("Apple", "Banana", "Peach") );
 	}
 }

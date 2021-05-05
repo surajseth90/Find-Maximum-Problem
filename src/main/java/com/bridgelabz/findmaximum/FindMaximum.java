@@ -3,40 +3,26 @@
  */
 package com.bridgelabz.findmaximum;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
-public class FindMaximum <E extends Comparable<E>> {
-	private E firstvalue;
-	private E secondvalue;
-	private E thirdvalue;
-
-	public FindMaximum(E firstvalue, E secondvalue, E thirdvalue) {
-		super();
-		this.firstvalue = firstvalue;
-		this.secondvalue = secondvalue;
-		this.thirdvalue = thirdvalue;
-	}
+public class FindMaximum<T extends Comparable<T>> {
 
 	public static void main(String[] args) {
-		FindMaximum.findMax(20,5, 10);
-		FindMaximum.findMax(20.5f, 15.6f, 18.9f);
-		FindMaximum.findMax("Apple", "Peach", "Banana");
+		FindMaximum.max(20, 5, 80, 90, 10);
+		FindMaximum.max(20.5f, 15.6f, 18.9f, 58.1f, 63.6f);
+		FindMaximum.max("Apple", "Peach", "Banana", "Grapes", "Orange");
 	}
 
-	public static <E extends Comparable<E>> E findMax(E firstvalue, E secondvalue, E thirdvalue) {
-		E max = firstvalue;
-		if (secondvalue.compareTo(max) > 0) {
-			max = secondvalue;
+	public static <T extends Comparable<T>> T max(T... elements) {
+		T max = elements[0];
+		for (T element : elements) {
+			if (element.compareTo(max) > 0) {
+				max = element;
+			}
 		}
-		if (thirdvalue.compareTo(max) > 0) {
-			max = thirdvalue;
-		}
-		printMax(max);
 		return max;
 	}
-	
-	public static <E> void printMax(E max)
-	{
-		System.out.println("Maximum Value is : "+max);
-	}
+
 }
