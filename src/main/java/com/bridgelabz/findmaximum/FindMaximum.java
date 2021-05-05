@@ -22,7 +22,11 @@ public class FindMaximum<T extends Comparable<T>> {
 				max = element;
 			}
 		}
+		printMax(max);
 		return max;
+	}
+	public static <E> void printMax(E max) {
+		System.out.println("Maximum Value is : " + max);
 	}
 
 }
