@@ -8,59 +8,25 @@ import java.util.Scanner;
 public class FindMaximum {
 
 	public static void main(String[] args) {
-		new FindMaximum().findMaxInteger(20,5, 10);
-		new FindMaximum().findMaxFloat(20.5f, 15.6f, 18.9f);
-		new FindMaximum().findMaxString("Apple", "Peach", "Banana");
+		new FindMaximum().findMax(20,5, 10);
+		new FindMaximum().findMax(20.5f, 15.6f, 18.9f);
+		new FindMaximum().findMax("Apple", "Peach", "Banana");
 	}
 
-	public static Integer findMaxInteger(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
-		Integer max = firstNumber;
-		if (secondNumber.compareTo(max) > 0) {
-			max = secondNumber;
+	public static <E extends Comparable<E>> E findMax(E firstvalue, E secondvalue, E thirdvalue) {
+		E max = firstvalue;
+		if (secondvalue.compareTo(max) > 0) {
+			max = secondvalue;
 		}
-		if (thirdNumber.compareTo(max) > 0) {
-			max = thirdNumber;
-		}
-		printMax(max);
-		return max;
-	}
-	
-	public static void printMax(Integer max)
-	{
-		System.out.println("Maximum number is : "+max);
-	}
-	
-	public static Float findMaxFloat(Float firstNumber, Float secondNumber, Float thirdNumber) {
-		Float max = firstNumber;
-		if (secondNumber.compareTo(max) > 0) {
-			max = secondNumber;
-		}
-		if (thirdNumber.compareTo(max) > 0) {
-			max = thirdNumber;
+		if (thirdvalue.compareTo(max) > 0) {
+			max = thirdvalue;
 		}
 		printMax(max);
 		return max;
 	}
 	
-	public static void printMax(Float max)
+	public static <E> void printMax(E max)
 	{
-		System.out.println("Maximum number is : "+max);
-	}
-
-	public static String findMaxString(String firstString, String secondString, String thirdString) {
-		String max = firstString;
-		if (secondString.compareTo(max) > 0) {
-			max = secondString;
-		}
-		if (thirdString.compareTo(max) > 0) {
-			max = thirdString;
-		}
-		printMax(max);
-		return max;
-	}
-	
-	public static void printMax(String max)
-	{
-		System.out.println("Maximum number is : "+max);
+		System.out.println("Maximum Value is : "+max);
 	}
 }
