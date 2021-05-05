@@ -10,7 +10,7 @@ public class FindMaximum {
 	public static void main(String[] args) {
 		new FindMaximum().findMaxInteger(20,5, 10);
 		new FindMaximum().findMaxFloat(20.5f, 15.6f, 18.9f);
-
+		new FindMaximum().findMaxString("Apple", "Peach", "Banana");
 	}
 
 	public static Integer findMaxInteger(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
@@ -47,4 +47,20 @@ public class FindMaximum {
 		System.out.println("Maximum number is : "+max);
 	}
 
+	public static String findMaxString(String firstString, String secondString, String thirdString) {
+		String max = firstString;
+		if (secondString.compareTo(max) > 0) {
+			max = secondString;
+		}
+		if (thirdString.compareTo(max) > 0) {
+			max = thirdString;
+		}
+		printMax(max);
+		return max;
+	}
+	
+	public static void printMax(String max)
+	{
+		System.out.println("Maximum number is : "+max);
+	}
 }
