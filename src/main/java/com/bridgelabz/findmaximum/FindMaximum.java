@@ -5,12 +5,22 @@ package com.bridgelabz.findmaximum;
 
 import java.util.Scanner;
 
-public class FindMaximum {
+public class FindMaximum <E extends Comparable<E>> {
+	private E firstvalue;
+	private E secondvalue;
+	private E thirdvalue;
+
+	public FindMaximum(E firstvalue, E secondvalue, E thirdvalue) {
+		super();
+		this.firstvalue = firstvalue;
+		this.secondvalue = secondvalue;
+		this.thirdvalue = thirdvalue;
+	}
 
 	public static void main(String[] args) {
-		new FindMaximum().findMax(20,5, 10);
-		new FindMaximum().findMax(20.5f, 15.6f, 18.9f);
-		new FindMaximum().findMax("Apple", "Peach", "Banana");
+		FindMaximum.findMax(20,5, 10);
+		FindMaximum.findMax(20.5f, 15.6f, 18.9f);
+		FindMaximum.findMax("Apple", "Peach", "Banana");
 	}
 
 	public static <E extends Comparable<E>> E findMax(E firstvalue, E secondvalue, E thirdvalue) {
