@@ -8,14 +8,12 @@ import java.util.Scanner;
 public class FindMaximum {
 
 	public static void main(String[] args) {
-		Integer firstNumber ;
-		Integer secondNumber ;
-		Integer thirdNumber ;
-		new FindMaximum().findMax(20,5, 10);
+		new FindMaximum().findMaxInteger(20,5, 10);
+		new FindMaximum().findMaxFloat(20.5f, 15.6f, 18.9f);
 
 	}
 
-	public static Integer findMax(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
+	public static Integer findMaxInteger(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
 		Integer max = firstNumber;
 		if (secondNumber.compareTo(max) > 0) {
 			max = secondNumber;
@@ -28,6 +26,23 @@ public class FindMaximum {
 	}
 	
 	public static void printMax(Integer max)
+	{
+		System.out.println("Maximum number is : "+max);
+	}
+	
+	public static Float findMaxFloat(Float firstNumber, Float secondNumber, Float thirdNumber) {
+		Float max = firstNumber;
+		if (secondNumber.compareTo(max) > 0) {
+			max = secondNumber;
+		}
+		if (thirdNumber.compareTo(max) > 0) {
+			max = thirdNumber;
+		}
+		printMax(max);
+		return max;
+	}
+	
+	public static void printMax(Float max)
 	{
 		System.out.println("Maximum number is : "+max);
 	}
